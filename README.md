@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Start the Rails server
 
-Things you may want to cover:
+```
+rails s
+```
 
-* Ruby version
+Start the Front-end
 
-* System dependencies
+```
+cd fe/accounts
+npm start
+```
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You should see a UI at port 3001 communicating to a Rails server at port 3000
