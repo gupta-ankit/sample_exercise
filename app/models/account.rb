@@ -6,7 +6,6 @@ class Account < ApplicationRecord
     with_lock do
       update(balance: balance + amount)
       transactions.create(amount: amount, date: DateTime.now)
-      balance
     end
   end
 end

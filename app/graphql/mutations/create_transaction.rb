@@ -4,11 +4,14 @@ module Mutations
     argument :amount, Float, required: true
 
 
-    field :balance, Float
+    field :amount, Float
+    field :date, GraphQL::Types::ISO8601DateTime,
 
     def resolve(account_id:,amount:)
+      txn = Account.find(account_id).create_transaction(amount)
       {
-        balance: Account.find(account_id).create_transaction(amount)
+        amount: txn.amount,
+        date: txn.date 
       }
     end
   end
